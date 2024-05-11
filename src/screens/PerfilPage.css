@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'sansation';
+    src: url('/public/sansation/Sansation_Bold.ttf') format('truetype');
+}
+.blue-bar2 {
+    background-color: #26408B;
+    color: white;
+    text-align: justify;
+    height: 86px;
+    gap: 0px;
+    opacity: 0px;
+    display: flex; /* adicionado */
+    align-items: center; /* adicionado */
+    justify-content: space-between;
+}
+
+
+  
+.title {
+    font-family: 'Rubik', sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 27.26px;
+    margin-left: auto;  /* empurra o título para o centro */
+    margin-right: auto;
+    
+}
+.tekoagua {
+    margin-right: -120px;
+}
+
+.titulop{
+    font-family: 'Sansation', sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 39.17px;
+    letter-spacing: -0.03em;
+    text-align: center;
+}
+
+.perfil{
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 60px;
+    width: 30%; /* Ajuste conforme necessário */
+    max-width: 600px; /* Um máximo para que não fique muito grande em telas grandes */
+    padding: 20px;
+    margin: 70px auto; /* Centraliza o formulário */
+    background-color: #fff; /* Cor de fundo */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar */
+    border-radius: 50px; /* Bordas arredondadas */
+}
+
+.avatar{
+    width: 580px;
+    font-size: 50px;
+}
+
+.user-info{
+    padding: 40px 60px;
+
+}
+
+.alo button{
+    padding: 10px 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: #26408B;
+    color: #fff;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.alo{
+    display: flex;
+    flex-direction: column; /* Muda a direção para coluna */
+    align-items: center; 
+    
+}
+
+.alo button:hover {
+    background-color: #0056b3;
+}
+
+.sobre-nos{
+    color: black;
+    display: flex; 
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 5px;
+    text-decoration: none;
+
+}
+
+.sobrei{
+    width: 20px;
+    height: 20px;
+    
+
+}
