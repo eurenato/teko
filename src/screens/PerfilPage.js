@@ -4,6 +4,7 @@ import tekoagua from '../screens/tekoagua.png';
 import { FaUser } from 'react-icons/fa'; // Importe o ícone que você deseja usar
 import sobre from'../screens/help_FILL0_wght400_GRAD0_opsz24.png'
 
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"></link>
 const PerfilPage = () => {
     return(
         <div>
@@ -13,8 +14,9 @@ const PerfilPage = () => {
             </header>
             <div className='perfil'>
                 <h2 className='titulop'>PERFIL</h2>
-                
-                    <FaUser className='avatar'/> {/* Substitua a imagem do avatar pelo ícone */}
+                    <div className='avatar-container'>
+                        <FaUser className='avatar'/> {/* Substitua a imagem do avatar pelo ícone */}
+                    </div>
                 <div className='user-info'>
                     <div>
                         <label >

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 import Logo from './Logo';
+import { Link } from 'react-router-dom';
+import LoginPage from '../screens/LoginPage';
 
 function Navbar() {
   const navbarStyle = {
@@ -44,7 +46,9 @@ function Navbar() {
         <Nav.Link href="#quemSomos" style={linkStyle}>Quem Somos</Nav.Link>
         <Nav.Link href="#Nos" style={linkStyle}>Integrantes</Nav.Link>
         <Nav.Link href="#saibaMais" style={linkStyle}>Saiba Mais</Nav.Link>
-        <button style={buttonStyle}>Entrar</button>
+        <Link to="/login">
+          <button style={buttonStyle}>Entrar</button>
+        </Link>
       </Nav>
     </div>
   );
