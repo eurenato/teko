@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import './PerfilPage.css';
-import tekoagua from '../screens/tekoagua.png';
+//import React, { useState } from 'react';
+import '../components/PerfilPage.css';
+import tekoagua from '../img/tekoagua.png';
 import { FaUser } from 'react-icons/fa'; // Importe o ícone que você deseja usar
-import sobre from'../screens/help_FILL0_wght400_GRAD0_opsz24.png'
+import sobre from'../img/help_FILL0_wght400_GRAD0_opsz24.png'
 
 <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"></link>
 const PerfilPage = () => {
     return(
         <div>
             <header className="blue-bar2">
-                <img src={tekoagua} className='tekoagua'/>
+                <img src={tekoagua} alt='teko' className='tekoagua'/>
                 <h1 className='title'>TekoÁgua</h1>
             </header>
             <div className='perfil'>
