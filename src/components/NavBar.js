@@ -2,7 +2,6 @@ import React from 'react';
 import { Nav } from 'react-bootstrap';
 import Logo from './Logo';
 import { Link } from 'react-router-dom';
-import LoginPage from '../screens/LoginPage';
 
 function Navbar() {
   const navbarStyle = {
@@ -12,7 +11,7 @@ function Navbar() {
     backgroundColor: '#26408B',
     padding: '10px',
     color: 'white',
-    height: '60px',
+    height: '86px',
     position: 'fixed',
     width: '100%',
     top: '0', 

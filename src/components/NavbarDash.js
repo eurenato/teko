@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './Logo'; 
-import raissa from './Raissa.jpeg'
+import raissa from '../img/Raissa.jpeg'
 
 function Navbar() {
   const navbarStyle = {

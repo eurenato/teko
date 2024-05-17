@@ -4,7 +4,7 @@ import '../index.css'
 import Content from '../components/Content.js'
 import NavBar from '../components/NavBar.js';
 import Integrantes from '../components/Integrantes.js';
-import Teko from '../img/Tekoagua.png'
+import Teko from '../img/tekoagua.png'
 import Raissa from '../img/Raissa.jpeg'
 import Rafael from '../img/Rafael.jpeg'
 import Ethan from '../img/Ethan.jpeg'
@@ -18,19 +18,26 @@ function Principal() {
     <div className="App">
       <NavBar/>
       <div id='quemSomos' className='sobreNos'>
-      <div style={{marginLeft: '40px'}}>
+      <div style={{marginLeft: '45px'}}>
         <Content
-          text={<div style={{marginBottom: '40px', fontSize: '40px'}}>Quem Somos?</div>}
+          text={<div style={{marginBottom: '40px', fontSize: '50px'}}>Quem Somos?</div>}
           textb={
-            <div style={{ maxWidth: '60%' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus est turpis, consectetur ac dapibus ut, egestas quis neque. 
-              Aliquam quam ipsum, ultricies id aliquet non, elementum vitae sem. Vivamus imperdiet ante nisi, vel convallis est iaculis et. 
-              Nunc ut orci ac ligula ultricies pulvinar id id quam.
+            <div style={{ maxWidth: '70%', fontSize: '19px'}}>
+              Olá! Nós somos o TekoÁgua.<br/>
+              Nossa missão é simples: queremos parar o lixo antes que ele chegue ao mar e fazer isso de um jeito que todo mundo possa ver e participar.
+              Acreditamos que a tecnologia pode ser uma aliada poderosa na luta contra a poluição. Com nossa barreira ecológica, não só limpamos a água, mas também coletamos dados que ajudam a entender e melhorar o ciclo de vida do lixo.
+              <br/>
+              Nossa equipe é formada por engenheiros, programadores e designers que trabalham juntos para criar soluções que façam a diferença. 
+              <br/>
+              E o melhor? Nós fazemos isso com a ajuda de parceiros incríveis: empresas de gestão de resíduos que estão tão empenhadas quanto nós em deixar um legado positivo para o meio ambiente.
+              Juntos, estamos construindo um futuro onde rios limpos não são exceção, mas a regra. E estamos convidando você para fazer parte dessa transformação. 
+              <br/>
+              Vamos juntos?
             </div>
           }
         />
       </div> 
-        <ReactPlayer url='https://www.youtube.com/watch?v=PuRcj4yvfso' width='1224px' height='320px' style={{marginRight: '140px'}}/>
+        <ReactPlayer url='https://www.youtube.com/watch?v=PuRcj4yvfso' width='1820px' height='440px' style={{marginRight: '160px'}}/>
       </div>
       
       <div id='Nos' style={{width: '100vw', height: '100vh',backgroundColor: '#26408B',display: 'flex', flexDirection: 'column', justifyContent: 'center',}}>
