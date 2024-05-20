@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../components/LoginPage.css';
-import tekoagua from '../img/tekoagua.png';
+import '../../components/LoginPage.css';
+import tekoagua from '../../img/tekoagua.png';
 
 const LoginPage = () => {
   const [activeForm, setActiveForm] = useState('login');

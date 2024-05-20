@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 //import Dashboard from './screens/DashBoard';
-import Principal from './screens/Principal';
-import PerfilPage from './screens/PerfilPage';
-import LoginPage from './screens/LoginPage';
+import Principal from './screens/Principal/Principal'
+import PerfilPage from './screens/PerfilPage/PerfilPage';
+import LoginPage from './screens/LoginPage/LoginPage';
 //import Login from './screens/LoginPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 

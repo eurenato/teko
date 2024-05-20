@@ -1,17 +1,17 @@
 
 import ReactPlayer from 'react-player';
-import '../index.css'
-import Content from '../components/Content.js'
-import NavBar from '../components/NavBar.js';
-import Integrantes from '../components/Integrantes.js';
-import Teko from '../img/tekoagua.png'
-import Raissa from '../img/Raissa.jpeg'
-import Rafael from '../img/Rafael.jpeg'
-import Ethan from '../img/Ethan.jpeg'
-import Lucas from '../img/Lucas.jpeg'
-import Igor from '../img/Igor.png'
-import Renato from '../img/Renato.jpeg'
-import Manuel from '../img/Manuel.jpeg'
+import '../../index.css'
+import Content from '../../components/Content.js'
+import NavBar from '../../components/NavBar.js';
+import Integrantes from '../../components/Integrantes.js';
+import Teko from '../../img/tekoagua.png'
+import Raissa from '../../img/Raissa.jpeg'
+import Rafael from '../../img/Rafael.jpeg'
+import Ethan from '../../img/Ethan.jpeg'
+import Lucas from '../../img/Lucas.jpeg'
+import Igor from '../../img/Igor.png'
+import Renato from '../../img/Renato.jpeg'
+import Manuel from '../../img/Manuel.jpeg'
 
 function Principal() {
   return (
