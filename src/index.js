@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-//import Dashboard from './screens/DashBoard';
+import Dashboard from './screens/Dashboard/DashBoard';
 import Principal from './screens/Principal/Principal'
 import PerfilPage from './screens/PerfilPage/PerfilPage';
 import LoginPage from './screens/LoginPage/LoginPage';
@@ -15,8 +15,9 @@ root.render(
    <Router>
       <Routes> {/* Envolve todas as rotas */}
         <Route path="/" element={<Principal />} /> {/* Use 'element' em vez de 'component' */}
-        <Route path="/perfil" element={<PerfilPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/perfil" element={<PerfilPage/>} />
+        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/Dashboard" element={<Dashboard/>} />
       </Routes>
     </Router>
   </React.StrictMode>

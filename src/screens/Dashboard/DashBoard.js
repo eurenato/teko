@@ -1,8 +1,8 @@
 import React from 'react';
-import ColumnChart from '../components/Chart';
-import Map from '../components/Map'
+import ColumnChart from '../../components/Chart';
+import Map from '../../components/Map'
 import 'leaflet/dist/leaflet.css';
-import NavbarDash from '../components/NavbarDash'
+import NavbarDash from '../../components/NavbarDash'
 
 
 function DashBoard() {

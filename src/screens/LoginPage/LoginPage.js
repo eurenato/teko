@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import '../../components/LoginPage.css';
 import tekoagua from '../../img/tekoagua.png';
+import { loginUser, createUser } from './loginPageRequests';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const [activeForm, setActiveForm] = useState('login');
   const [loginData, setLoginData] = useState({ email: '', password: '' });
   const [signupData, setSignupData] = useState({ nomeCompleto: '', email: '', senha: '' });
+  const navigate = useNavigate()
 
   const handleLoginChange = e => {
     const { name, value } = e.target;
@@ -23,10 +26,21 @@ const LoginPage = () => {
     }));
   };
 
-  const handleLoginSubmit = e => {
+  const handleLoginSubmit = async e => {
     e.preventDefault();
     console.log("Login:", loginData);
+    try {
+      const login = await loginUser(loginData);
+      if (login.ok) {
+        navigate('/dashboard');
+      } else {
+        console.log("Erro no login");
+      }
+    } catch (error) {
+      console.error("Erro ao fazer login:", error);
+    }
   };
+  
 
   const handleSignupSubmit = e => {
     e.preventDefault();
