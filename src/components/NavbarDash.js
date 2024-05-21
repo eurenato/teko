@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Logo from './Logo'; 
 import raissa from '../img/Raissa.jpeg'
-
+import { UserContext } from '../contexts/authenticatedContext';
 function Navbar() {
+  const {currentUser} = useContext(UserContext)
   const navbarStyle = {
     display: 'flex',
     justifyContent: 'space-between',
@@ -23,7 +24,7 @@ function Navbar() {
         <h2>Dashboard</h2>
       </div>
       <div style={{display: 'flex', alignItems: 'center'}}>
-      <span>{username}</span>
+      <span>{currentUser ? currentUser.name : ""}</span>
       <img src={raissa} alt="Descrição da Imagem" style={{marginLeft: '10px', borderRadius: '50px', height: '50px', width: '50px'}}/>
     </div>
     </div>

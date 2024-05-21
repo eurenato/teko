@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../../components/LoginPage.css';
 import tekoagua from '../../img/tekoagua.png';
-import { loginUser, createUser } from './loginPageRequests';
+import { LoginUser, CreateUser } from './loginPageRequests';
 import { Navigate, useNavigate } from 'react-router-dom';
-
+import { Toast } from 'react-bootstrap';
+import { UserContext } from '../../contexts/authenticatedContext';
 const LoginPage = () => {
   const [activeForm, setActiveForm] = useState('login');
   const [loginData, setLoginData] = useState({ email: '', password: '' });
-  const [signupData, setSignupData] = useState({ nomeCompleto: '', email: '', senha: '' });
+  const [signupData, setSignupData] = useState({ name: '', email: '', password: '', company: "7f8877bd-c104-46c2-a695-980648a68a2e"});
+  const {user, setUser} = useContext(UserContext)
   const navigate = useNavigate()
 
   const handleLoginChange = e => {
@@ -30,8 +32,13 @@ const LoginPage = () => {
     e.preventDefault();
     console.log("Login:", loginData);
     try {
-      const login = await loginUser(loginData);
-      if (login.ok) {
+      const login = await LoginUser(loginData);
+      if (login) {
+        console.log(login)
+        setUser({
+          name: loginData.name,
+          email: loginData.email
+        })
         navigate('/dashboard');
       } else {
         console.log("Erro no login");
@@ -42,9 +49,23 @@ const LoginPage = () => {
   };
   
 
-  const handleSignupSubmit = e => {
+  const handleSignupSubmit = async e => {
     e.preventDefault();
     console.log("Cadastro:", signupData);
+    try{
+      const signup = await CreateUser(signupData);
+      console.log(signup)
+      if(signup){
+        setUser({
+          name: signupData.name,
+          email: signupData.email
+        })
+        navigate('/dashboard');
+      }
+    }
+    catch (error) {
+      console.log("poxa")
+    }
   };
 
   return (
@@ -56,9 +77,9 @@ const LoginPage = () => {
         <div className={`signup-form ${activeForm !== 'signup' ? 'inactive' : ''}`}>  
           <h2 className='titulo' onClick={() => setActiveForm('signup')}>CADASTRO</h2>
           <form onSubmit={handleSignupSubmit}>
-            <input type="text" name="nomeCompleto" placeholder="Nome Completo" value={signupData.nomeCompleto} onChange={handleSignupChange} />
+            <input type="text" name="name" placeholder="Nome Completo" value={signupData.name} onChange={handleSignupChange} />
             <input type="email" name="email" placeholder="Email" value={signupData.email} onChange={handleSignupChange} />
-            <input type="password" name="senha" placeholder="Senha" value={signupData.senha} onChange={handleSignupChange} />
+            <input type="password" name="password" placeholder="Senha" value={signupData.password} onChange={handleSignupChange} />
             <div className="buttons">
               <button className="av" type="submit">Avançar</button>
               <a href="#" className="voltar" onClick={() => console.log("Voltar")}>Voltar</a>

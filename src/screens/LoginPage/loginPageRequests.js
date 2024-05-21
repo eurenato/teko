@@ -1,49 +1,42 @@
 import axios from 'axios';
-
-export async function createUser(user) {
-    const url = "http://3.14.84.3:8000/user/"; // Substitua pela sua URL de criação de usuário
-
-    try {
-        const response = await axios.post(url, user, {
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
-
-        if (response.status === 200) {
-            console.log("Usuário criado com sucesso!");
-        } else {
-            console.log("Erro na requisição:", response.status);
+import { useContext, useState } from 'react';
+import { UserContext } from '../../contexts/authenticatedContext';
+export async function CreateUser(user) {
+    const url = "http://13.59.94.236:8000/user/"; // Substitua pela sua URL de criação de usuário
+    return await axios.post(url, user,{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
         }
-    } catch (error) {
-        console.error("Erro:", error);
-    }
+    })
+    .then(response => {
+        return response.status === 201 ? true : false
+    })
+    .catch(error => {
+        console.log(error)
+    });
 }
 
     
-    export async function loginUser(user){
-        const url = "http://3.14.84.3 :8000/user/" + user;
-    
-        await axios.get(url, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        .then(response => {
-            if (response.ok) {
-                console.log(response)
-                return response.json()
-            } else {
-                console.log("Erro na requisição:", response.status);
-            }
-        })
-        .then(data => {
-            console.log(data); // Aqui estamos imprimindo os dados recebidos
-        })
-        .catch(error => {
-            console.error("Erro:", error);
-        });
-    
-    }
+export async function LoginUser(user){
+    const url = `http://13.59.94.236:8000/user?email=${encodeURIComponent(user.email)}`
+
+    return await axios.get(url, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => {
+        if (response.data[0] && response.data[0].email === user.email && response.data[0].password === user.password){
+            // vai retornar true ou false dependendo do resultado da condicional
+            return response.data[0]
+        }
+        return false
+    })
+    .catch(error => {
+        console.error("Erro:", error);
+    });
+}
+
     
