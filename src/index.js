@@ -16,10 +16,10 @@ root.render(
     <UserProvider>
       <Router>
         <Routes> {/* Envolve todas as rotas */}
-          <Route path="/" element={<Dashboard />} /> {/* Use 'element' em vez de 'component' */}
+          <Route path="/Dashboard" element={<Dashboard />} /> {/* Use 'element' em vez de 'component' */}
           <Route path="/perfil" element={<PerfilPage/>} />
           <Route path="/login" element={<LoginPage/>} />
-          <Route path="/Dashboard" element={<Principal/>} />
+          <Route path="/" element={<Principal/>} />
         </Routes>
       </Router>
     </UserProvider>
