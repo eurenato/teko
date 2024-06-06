@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useContext, useState } from 'react';
 import { UserContext } from '../../contexts/authenticatedContext';
 export async function CreateUser(user) {
-    const url = "http://13.59.94.236:8000/user/"; // Substitua pela sua URL de criação de usuário
+    const url = "http://18.222.85.156:8000/user/"; // Substitua pela sua URL de criação de usuário
     return await axios.post(url, user,{
         method: "POST",
         headers: {
@@ -19,7 +19,7 @@ export async function CreateUser(user) {
 
     
 export async function LoginUser(user){
-    const url = `http://13.59.94.236:8000/user?email=${encodeURIComponent(user.email)}`
+    const url = `http://18.222.85.156:8000/user?email=${encodeURIComponent(user.email)}`
 
     return await axios.get(url, {
         method: "GET",

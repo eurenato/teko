@@ -35,40 +35,42 @@ class ColumnChart extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://13.59.94.236:8000/trashLog/')
-      .then(response => {
-        const data = response.data;
-        const monthNames = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
-        const groupedData = data.reduce((acc, item) => {
+    axios.get('http://18.222.85.156:8000/trashLog/')
+    .then(response => {
+      const data = response.data;
+      const monthNames = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+      const groupedData = data.reduce((acc, item) => {
+        if (item.weight !== null) {
           const date = new Date(item.date);
           const month = date.getMonth();
-          acc[month] = (acc[month] || 0) + Number(item.weight);
-          return acc;
-        }, {});
-
-        const seriesData = [];
-        const categories = [];
-        for (let i = 0; i < 12; i++) {
-          if (groupedData.hasOwnProperty(i)) {
-            seriesData.push(groupedData[i]);
-            categories.push(monthNames[i]);
-          }
+          const weights = item.weight.split(',').map(Number);
+          const totalWeight = weights.reduce((a, b) => a + b, 0);
+          acc[month] = (acc[month] || 0) + totalWeight;
         }
+        return acc;
+      }, {});
 
-        this.setState(prevState => ({
-          options: {
-            ...prevState.options,
-            xaxis: {
-              ...prevState.options.xaxis,
-              categories: categories
-            }
-          },
-          series: prevState.series.map(s => s.name === 'Lixo' ? {...s, data: seriesData} : s)
-        }));
-      })
-      .catch(error => {
-        console.error("Erro ao buscar dados", error);
-      });
+      const seriesData = [];
+      const categories = [];
+      for (let i = 0; i < 12; i++) {
+        if (groupedData.hasOwnProperty(i)) {
+          seriesData.push(groupedData[i]);
+          categories.push(monthNames[i]);
+        }
+      }
+
+      this.setState(prevState => ({
+        options: {
+          ...prevState.options,
+          xaxis: {
+            ...prevState.options.xaxis,
+            categories: categories
+          }
+        },
+        series: prevState.series.map(s => s.name === 'Lixo' ? {...s, data: seriesData} : s)
+      }));
+    })
+    
   }
 
   render() {
