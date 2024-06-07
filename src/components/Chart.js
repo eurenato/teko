@@ -46,6 +46,7 @@ class ColumnChart extends React.Component {
           const weights = item.weight.split(',').map(Number);
           const totalWeight = weights.reduce((a, b) => a + b, 0);
           acc[month] = (acc[month] || 0) + totalWeight;
+          acc[month] = parseFloat(acc[month].toFixed(2));
         }
         return acc;
       }, {});

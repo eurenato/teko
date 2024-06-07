@@ -3,7 +3,7 @@ export function isThereMore(trashData) {
     let x = (trashData[4]) || 0
     let y = (trashData[5]) || 0
     if (x > y) {
-      return "Foram coletados " + (x - y) + "kgs a mais que mês passado";
+      return "Foram coletados " + (x - y) + "kgs a menos que mês passado";
     } else {
       return "Foram coletados " + (y - x) + "kgs a menos que mês passado";
     }
