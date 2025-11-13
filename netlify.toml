@@ -1,0 +1,6 @@
+[build]
+  command = "CI= npm run build" # Your existing build command
+  publish = "build"             # The output directory of your React build
+
+[functions]
+  directory = "netlify/functions"
