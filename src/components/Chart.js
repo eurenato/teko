@@ -1,90 +1,101 @@
+// src/components/LineChart.jsx
 import React from 'react';
 import Chart from 'react-apexcharts';
-import axios from 'axios';
 
-class ColumnChart extends React.Component {
-  constructor(props) {
-    super(props);
+function LineChart({ data }) {
+  const categories = Object.keys(data); // e.g., ["00:00", "01:00", ...]
+  const values = Object.values(data);   // e.g., [0, 0.32, 0, ...]
 
-    this.state = {
-      options: {
-        chart: {
-          id: 'basic-bar',
-          toolbar: {
-            show: false
-          }
-        },
-        colors: ['#26408B'],
-        dataLabels: {
-          enabled: false
-        },
-        grid: {
-            show: false,
-          },
-        xaxis: {
-          categories: []
-        }
+  const chartOptions = {
+    chart: {
+      id: 'line-chart',
+      type: 'line',
+      // You might want to consider setting animations.enabled to false if you notice flickering
+      // after a data update, although it can make transitions less smooth.
+      // animations: {
+      //   enabled: false,
+      // }
+    },
+    markers: {
+      size: 6,
+      colors: ['#2C7A7B'],
+      strokeWidth: 2,
+      strokeColors: '#fff',
+      hover: {
+        size: 8
+      }
+    },
+    xaxis: {
+      categories: categories,
+      title: {
+        text: 'Hora do Dia' // Added a title for clarity
       },
-      series: [
-        {
-          name: 'Lixo',
-          data: []
-        }
-      ]
-    }
-  }
-
-  componentDidMount() {
-    axios.get('http://18.222.85.156:8000/trashLog/')
-    .then(response => {
-      const data = response.data;
-      const monthNames = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
-      const groupedData = data.reduce((acc, item) => {
-        if (item.weight !== null) {
-          const date = new Date(item.date);
-          const month = date.getMonth();
-          const weights = item.weight.split(',').map(Number);
-          const totalWeight = weights.reduce((a, b) => a + b, 0);
-          acc[month] = (acc[month] || 0) + totalWeight;
-        }
-        return acc;
-      }, {});
-
-      const seriesData = [];
-      const categories = [];
-      for (let i = 0; i < 12; i++) {
-        if (groupedData.hasOwnProperty(i)) {
-          seriesData.push(groupedData[i]);
-          categories.push(monthNames[i]);
+      tickAmount: 24, // Ensures all 24 ticks are shown if space allows
+      labels: {
+        rotate: -45, // Rotate labels to prevent overlap
+        rotateAlways: true,
+        formatter: function (val) {
+          // Optional: format X-axis labels if needed, e.g., only show every 2 hours
+          // if (parseInt(val.split(':')[0]) % 2 === 0) {
+          //   return val;
+          // }
+          // return '';
+          return val; // Display "HH:00" as is
         }
       }
+    },
+    yaxis: {
+        title: {
+            text: 'Peso (kg)' // Added a title for clarity
+        }
+    },
+    stroke: {
+      curve: 'smooth',
+      colors: ['#0A8754']
+    },
+    title: {
+      text: 'Peso do Lixo por Hora', // Updated title
+      align: 'left'
+    },
+    tooltip: {
+      enabled: true, // Ensure tooltips are enabled
+      shared: false, // Important: Set to false for better control with discrete X-axis
+      intersect: true, // Important: Tooltip shows only when hovering directly over a data point/marker
+      // Alternatively, try shared: true and intersect: false for a wider hover area
+      // shared: true,
+      // intersect: false,
+      x: {
+        show: true, // Show the X-axis label in the tooltip
+        formatter: function (val) {
+          return `Hora: ${val}`; // Customize X-axis label in tooltip
+        }
+      },
+      y: {
+        formatter: function (val) {
+          return `${val !== null ? val.toFixed(2) : 'N/A'} kg`; // Customize Y-axis label in tooltip
+        }
+      },
+      // You can also add a fixed position if you want the tooltip to always appear in the same spot
+      // fixed: {
+      //   enabled: true,
+      //   position: 'topRight', // topRight, topLeft, bottomRight, bottomLeft
+      //   offsetX: 0,
+      //   offsetY: 0,
+      // },
+      // To keep tooltip visible for a longer duration after mouse out
+      // On the official docs, I don't see a direct `hideDelay` option in `tooltip` but in `markers`.
+      // The best workaround is often `shared: false` with `intersect: true` or `shared: true` with `intersect: false`.
+    }
+  };
 
-      this.setState(prevState => ({
-        options: {
-          ...prevState.options,
-          xaxis: {
-            ...prevState.options.xaxis,
-            categories: categories
-          }
-        },
-        series: prevState.series.map(s => s.name === 'Lixo' ? {...s, data: seriesData} : s)
-      }));
-    })
-    
-  }
+  const chartSeries = [
+    {
+      name: 'Peso (kg)',
+      data: values,
+    }
+  ];
 
-  render() {
-    return (
-      <div className="bar">
-        <Chart
-          options={this.state.options}
-          series={this.state.series}
-          type="bar"
-          width="500"
-        />
-      </div>
-    );
-  }
+  return <Chart options={chartOptions} series={chartSeries} type="line" height={350} />;
 }
 
-export default ColumnChart;
+export default LineChart;

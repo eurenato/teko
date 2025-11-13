@@ -6,9 +6,9 @@ import {Icon} from 'leaflet'
 import axios from 'axios';
 
 function MyMap() {
-  const [position, setPosition] = useState([-1.489572059746894, -48.455529902548946]);
+  const [position, setPosition] = useState([-1.4452047203496743, -48.4784512001505]);
   return (
-    <MapContainer center={position} zoom={20} style={{ height: "300px", width: "500px" }}>
+    <MapContainer center={position} zoom={20} style={{ height: "300px", width: "750px", borderRadius: "10px" }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

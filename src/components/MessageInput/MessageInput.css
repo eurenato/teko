@@ -1,0 +1,49 @@
+.message-input-form {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #eee;
+  background-color: #f9f9f9;
+  flex-shrink: 0; 
+  padding-top: 10px;
+   position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.message-input-field {
+  flex-grow: 1;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.message-input-field:focus {
+  outline: none;
+  border-color: #005d36;
+}
+
+.message-send-button {
+  background-color: #005d36;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.message-send-button:hover {
+  background-color: #0056b3;
+}
+
+.message-input-container { /* Assuming MessageInput is wrapped in a container like this */
+  flex-shrink: 0; /* Prevents it from shrinking */
+  padding-top: 10px; /* Space between last message and input */
+  background-color: white; /* Optional: give it a background if it's floating */
+  /* If you want it truly fixed at the bottom, you might use position: fixed; bottom: 0; */
+  /* but with flexbox column and flex-shrink, it will naturally stay at the bottom */
+}

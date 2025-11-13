@@ -1,0 +1,9 @@
+.chat-window {
+  flex-grow: 1;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}

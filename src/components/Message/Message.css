@@ -1,0 +1,97 @@
+.message {
+  display: flex;
+  margin-bottom: 10px;
+  /* Adiciona um pequeno espaçamento inferior para mensagens consecutivas */
+}
+
+/* New style for the message header to align icon and name */
+.message-header {
+  display: flex;
+  align-items: center; /* Vertically center the icon and text */
+  margin-bottom: 5px; /* Space between header and bubble */
+}
+
+.message-icon {
+  width: 40px; /* Adjust icon size as needed */
+  height: 40px; /* Adjust icon size as needed */
+  border-radius: 50%; /* Make it round */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.message.user {
+  justify-content: flex-end;
+  /* Alinha as mensagens do usuário à direita */
+  align-items: flex-end;
+  /* Garante que o nome e o balão fiquem alinhados verticalmente */
+  flex-direction: column;
+  /* Coloca o "Você" acima do balão */
+}
+
+.message.user .message-header {
+  flex-direction: row-reverse; /* Puts the icon to the right of the name for user */
+}
+
+.message.user .message-icon {
+  margin-left: 8px; /* Space between user name and icon */
+}
+
+.message.ai {
+  justify-content: flex-start;
+  /* Alinha as mensagens da IA à esquerda */
+  align-items: flex-start;
+  /* Garante que o nome e o balão fiquem alinhados verticalmente */
+  flex-direction: column;
+  /* Coloca o "Tekinho" acima do balão */
+}
+
+.message.ai .message-header {
+  flex-direction: row; /* Puts the icon to the left of the name for AI */
+}
+
+.message.ai .message-icon {
+  margin-right: 8px; /* Space between AI icon and name */
+}
+
+.message h3 {
+  /* No need for margin-bottom here, it's handled by .message-header */
+  font-size: 0.9em;
+  /* Diminui um pouco o tamanho da fonte do nome */
+  color: #555;
+  /* Cor mais suave para o nome */
+}
+
+.message-bubble {
+  padding: 8px 12px;
+  /* Aumenta um pouco o padding para mais espaço interno */
+  border-radius: 20px;
+  /* Mantém as bordas arredondadas gerais */
+  max-width: 75%;
+  /* Aumenta um pouco a largura máxima para caber mais texto */
+  word-wrap: break-word;
+  /* Garante que o texto quebre corretamente */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  /* Adiciona uma sombra suave para dar profundidade */
+}
+
+.message.user .message-bubble {
+  background-color: #168657;
+  color: white;
+  border-bottom-right-radius: 5px;
+  /* Mantém a quina na parte inferior direita */
+  border-top-right-radius: 20px;
+  /* Mantém as bordas arredondadas no topo e na esquerda */
+  border-bottom-left-radius: 20px;
+  /* Arredonda a borda inferior esquerda */
+}
+
+.message.ai .message-bubble {
+  background-color: #60eab0;
+  /* Um cinza claro e neutro para a IA */
+  color: #333;
+  border-bottom-left-radius: 5px;
+  /* Mantém a quina na parte inferior esquerda */
+  border-top-left-radius: 20px;
+  /* Mantém as bordas arredondadas no topo e na direita */
+  border-bottom-right-radius: 20px;
+  /* Arredonda a borda inferior direita */
+}

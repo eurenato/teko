@@ -19,45 +19,6 @@ function Principal() {
   return (
     <div className="App">
       <NavBar/>
-      <div id='saibaMais' style={{width: '100vw', height: '100vh',}}>
-        
-          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',}}> 
-            <div style={{ textAlign: 'center', fontSize: '25px', marginTop: '130px' }}>
-              <Content
-                text="Objetivos a Resolver"
-                colorb='#26408B' 
-                textb="A TekoAgua reverte essa situação"
-              />
-
-              <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginTop: '40px'}}>
-              <div style={{backgroundColor: '#26408B', height: '600px', width: '423px', marginRight: '20px', boxSizing: 'border-box', position: 'relative', borderRadius: '50px', marginRight: '80px'}}>
-                  <img src={report} alt='Reportagem sobre a falta de coleta do Combú' style={{height: '300px', width: '423px', borderRadius: '50px'}}></img>
-                  
-                  <h2 style={{fontSize: '1.5rem',color: 'white', textAlign: 'left', marginLeft: '35px'}}>Impacto Ambiental</h2>
-                  <p style={{fontSize: '1.1rem',textAlign: 'left', textJustify: 'inter-word', color: 'white', marginLeft: '25px', marginRight: '25px'}}>O acúmulo de lixo pode levar à poluição do solo e da água, afetando a flora e a fauna local. Nosso projeto visa minimizar esse impacto, garantindo que o lixo seja coletado e descartado de maneira adequada.</p>
-                  
-                  <div style={{float: 'left', marginLeft: '30px', backgroundColor: '#ED7441', borderRadius: '50px', width: '120px'}}>
-                    <a href='https://www.oliberal.com/belem/moradores-da-ilha-do-combu-denunciam-que-estao-ha-pelo-menos-uma-semana-sem-receber-coleta-de-lixo-1.701540' style={{color: 'white', textDecoration: 'none', fontSize: '1.2rem'}}>Saiba Mais</a>
-                  </div>
-              </div>
-
-
-
-                <div style={{backgroundColor: '#26408B', height: '600px', width: '423px', marginRight: '20px', boxSizing: 'border-box', position: 'relative', borderRadius: '50px'}}>
-                  <img src={grafico} alt='Grafico sobre o lixo' style={{height: '300px', width: '423px', borderRadius: '50px'}}></img>
-                  <h2 style={{fontSize: '1.5rem',color: 'white', textAlign: 'left', marginLeft: '35px'}}>Saúde Pública</h2>
-                  <p style={{fontSize: '1.1rem',textAlign: 'left', textJustify: 'inter-word', color: 'white', marginLeft: '25px', marginRight: '25px'}}>O lixo acumulado pode se tornar um terreno fértil para a proliferação de doenças. Ao garantir uma coleta de lixo eficiente, nosso projeto protege a saúde dos residentes e visitantes da Ilha do Combu.</p>
-                  <div style={{float: 'left', marginLeft: '30px', backgroundColor: '#ED7441', borderRadius: '50px', width: '120px'}}>
-                    <a href='https://bdta.ufra.edu.br/jspui/bitstream/123456789/1927/1/Analise%20da%20gest%C3%A3o%20dos%20res%C3%ADduos%20s%C3%B3lidos%20produzidos%20nas%20ilhas%20do%20comb%C3%BA%20e%20cotijuba%20no%20municipio%20de%20belem-pa.pdf' style={{color: 'white', textDecoration: 'none', fontSize: '1.2rem'}}>Saiba Mais</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> 
-        
-      </div>
-
-
       <div id='quemSomos' className='sobreNos'>
       <div style={{marginLeft: '100px'}}>
         <Content
@@ -218,6 +179,44 @@ function Principal() {
 
         
         </div>     
+      </div>
+
+      <div id='saibaMais' style={{width: '100vw', height: '100vh',}}>
+        
+          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',}}> 
+            <div style={{ textAlign: 'center', fontSize: '25px', marginTop: '130px' }}>
+              <Content
+                text="Objetivos a Resolver"
+                colorb='#26408B' 
+                textb="A TekoAgua reverte essa situação"
+              />
+
+              <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginTop: '40px'}}>
+              <div style={{backgroundColor: '#26408B', height: '520px', width: '423px', marginRight: '20px', boxSizing: 'border-box', position: 'relative', borderRadius: '50px', marginRight: '80px'}}>
+                  <img src={report} alt='Reportagem sobre a falta de coleta do Combú' style={{height: '260px', width: '423px', borderRadius: '50px'}}></img>
+                  
+                  <h2 style={{fontSize: '1.5rem',color: 'white', textAlign: 'left', marginLeft: '35px'}}>Impacto Ambiental</h2>
+                  <p style={{fontSize: '1.1rem',textAlign: 'left', textJustify: 'inter-word', color: 'white', marginLeft: '25px', marginRight: '25px'}}>O acúmulo de lixo pode levar à poluição do solo e da água, afetando a flora e a fauna local. Nosso projeto visa minimizar esse impacto, garantindo que o lixo seja coletado e descartado de maneira adequada.</p>
+                  
+                  <div style={{float: 'left', marginLeft: '30px', backgroundColor: '#ED7441', borderRadius: '50px', width: '120px'}}>
+                    <a href='https://www.oliberal.com/belem/moradores-da-ilha-do-combu-denunciam-que-estao-ha-pelo-menos-uma-semana-sem-receber-coleta-de-lixo-1.701540' style={{color: 'white', textDecoration: 'none', fontSize: '1.2rem'}}>Saiba Mais</a>
+                  </div>
+              </div>
+
+
+
+                <div style={{backgroundColor: '#26408B', height: '520px', width: '423px', marginRight: '20px', boxSizing: 'border-box', position: 'relative', borderRadius: '50px'}}>
+                  <img src={grafico} alt='Grafico sobre o lixo' style={{height: '260px', width: '423px', borderRadius: '50px'}}></img>
+                  <h2 style={{fontSize: '1.5rem',color: 'white', textAlign: 'left', marginLeft: '35px'}}>Saúde Pública</h2>
+                  <p style={{fontSize: '1.1rem',textAlign: 'left', textJustify: 'inter-word', color: 'white', marginLeft: '25px', marginRight: '25px'}}>O lixo acumulado pode se tornar um terreno fértil para a proliferação de doenças. Ao garantir uma coleta de lixo eficiente, nosso projeto protege a saúde dos residentes e visitantes da Ilha do Combu.</p>
+                  <div style={{float: 'left', marginLeft: '30px', backgroundColor: '#ED7441', borderRadius: '50px', width: '120px'}}>
+                    <a href='https://bdta.ufra.edu.br/jspui/bitstream/123456789/1927/1/Analise%20da%20gest%C3%A3o%20dos%20res%C3%ADduos%20s%C3%B3lidos%20produzidos%20nas%20ilhas%20do%20comb%C3%BA%20e%20cotijuba%20no%20municipio%20de%20belem-pa.pdf' style={{color: 'white', textDecoration: 'none', fontSize: '1.2rem'}}>Saiba Mais</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+        
       </div>
 
     </div>
