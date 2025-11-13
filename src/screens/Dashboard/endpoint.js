@@ -1,5 +1,5 @@
 class GPTAssistant {
-    constructor(apiKey=env.process.env.REACT_APP_OPEN_AI_KEY, assistantId=env.process.env.REACT_APP_AGENT_KEY) {
+    constructor(apiKey=process.env.REACT_APP_OPEN_AI_KEY, assistantId=process.env.REACT_APP_AGENT_KEY) {
         this.apiKey = apiKey;
         this.assistantId = assistantId;
         this.baseUrl = "https://api.openai.com/v1";
