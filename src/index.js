@@ -16,7 +16,9 @@ root.render(
   <React.StrictMode>
     <UserProvider>
       <Router>
-        <Routes> 
+        <Routes> {/* Envolve todas as rotas */}
+          <Route path="/Dashboard" element={<Dashboard />} /> 
+          <Route path="/chat-interface" element={<ChatInterface/>} />
           <Route path="/" element={<Dashboard/>} />
         </Routes>
       </Router>
