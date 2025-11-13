@@ -35,7 +35,7 @@ const PerfilPage = () => {
                 </div>
                     <div className='alo'>
                         
-                        <a href="#" className="sobre-nos" onClick={() => console.log("sobrenos")}> <img src={sobre} className='sobrei'/>Sobre nós</a>
+                        <a className="sobre-nos" onClick={() => console.log("sobrenos")}> <img alt="sobre" src={sobre} className='sobrei'/>Sobre nós</a>
                         <button className='voltar'>Voltar</button>
                         <button className='sair'>Sair</button>
                     </div>

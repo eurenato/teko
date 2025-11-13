@@ -71,7 +71,7 @@ const LoginPage = () => {
   return (
     <div>
       <header className="blue-bar">
-        <img src={tekoagua} className='tekoagua'/>
+        <img src={tekoagua}alt="tekoagua logo" className='tekoagua'/>
       </header>
       <div className="login-page">
         <div className={`signup-form ${activeForm !== 'signup' ? 'inactive' : ''}`}>  
@@ -82,7 +82,7 @@ const LoginPage = () => {
             <input type="password" name="password" placeholder="Senha" value={signupData.password} onChange={handleSignupChange} />
             <div className="buttons">
               <button className="av" type="submit">Avançar</button>
-              <a href="#" className="voltar" onClick={() => console.log("Voltar")}>Voltar</a>
+              <a className="voltar" onClick={() => console.log("Voltar")}>Voltar</a>
             </div>
           </form>
         </div>
